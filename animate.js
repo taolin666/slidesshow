@@ -2,11 +2,11 @@ function animate(element,target){
 		if (element.timer){
       clearInterval(element.timer);
     }
+		var step =10;
 		element.timer = setInterval(function () {
 			var leader = element.offsetLeft;
-			var step =10;
 			if(leader>target){
-				leader -=step
+				step = -Math.abs(step)
 			}
 			 if (Math.abs(leader - target)>Math.abs(step)){
 				leader += step;
